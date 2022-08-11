@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
-          script: "cd /home/oftalmologica/app/ && ./.scripts/deploy.sh"
+          script: "cd /var/html/www/ && ./.scripts/deploy.sh"
