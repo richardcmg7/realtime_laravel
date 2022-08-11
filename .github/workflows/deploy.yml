@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
-          script: "cd /var/html/www/realtime_laravel/ && ./.scripts/deploy.sh"
+          script: "cd /var/html/www/realtime_laravel/ && chmod +x ./.scripts/deploy.sh  && ./.scripts/deploy.sh"
