@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
-rm -r * || true
+rm -r * 
+rm -r .*
+
 
 cp .env.example .env
 
@@ -51,5 +53,4 @@ echo "Deployment started ..."
 # Exit maintenance mode
 #php artisan up
     # docker exec ${APP_NAME} php artisan up
-
 echo "Deployment finished!"
