@@ -24,4 +24,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
+
           script: "cd /home/nuevastics/realtime && cd ./.scripts && chmod/deploy.sh && ./deploy.sh"
+
+
