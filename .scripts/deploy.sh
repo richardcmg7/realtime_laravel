@@ -1,9 +1,7 @@
 #!/bin/bash
 set -e
 
-rm -fr * || true
-
-git clone git@github.com:richardcmg7/realtime_laravel.git .
+rm -r * || true
 
 cp .env.example .env
 
