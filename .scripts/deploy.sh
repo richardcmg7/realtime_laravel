@@ -1,22 +1,19 @@
 #!/bin/bash
 set -e
 
-rm -r * 
-rm -r .*
-
-
 cp .env.example .env
 
 docker-compose up -d
 
-#APP_NAME=$(grep DOCKER_APP_NAME .env | cut -d '=' -f2)-app
+APP_NAME=$(grep DOCKER_APP_NAME .env | cut -d '=' -f2)-app
+echo ${APP_NAME}
 
 echo "Deployment started ..."
 
 # Enter maintenance mode or return true
 # if already is in maintenance mode
 # (php artisan down) || true
-# (docker exec ${APP_NAME} php artisan down) || true
+(docker exec realtime-app php artisan down) || true
 
 # Pull the latest version of the app
 # git pull origin production
@@ -28,7 +25,7 @@ echo "Deployment started ..."
 # Install composer dependencies
 # composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 # Install dependencies based on lock file
-    # docker exec ${APP_NAME} /usr/local/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+docker exec realtime-app composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 
 # Clear the old cache
 # php artisan clear-compiled

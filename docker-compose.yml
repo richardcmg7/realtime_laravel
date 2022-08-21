@@ -49,7 +49,7 @@ services:
   node:
     image: node:14-alpine
     working_dir: /app
-    container_name: node
+    container_name: ${DOCKER_APP_NAME}-node
     restart: unless-stopped
     volumes:
       - ./:/app

@@ -25,4 +25,10 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
 
-          script: "cd /home/nuevastics && git clone git@github.com:richardcmg7/realtime_laravel.git && cd realtime_laravel"
+          script: |
+            cd /home/nuevastics
+            git clone git@github.com:richardcmg7/realtime_laravel.git -b production
+            cd realtime_laravel
+            git merge origin/deploy-server
+            ./.scripts/deploy.sh
+
